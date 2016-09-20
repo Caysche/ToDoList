@@ -27,27 +27,8 @@
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
     
-    Todo *homework = [[Todo alloc] init];
-    homework.title = @"Homework";
-    homework.todoDescription = @"I have to do all the programming tasks Dan gave us.";
-    homework.priorityNumber = @1;
-    homework.isCompleted = NO;
+    [self addData];
     
-    Todo *tidyUpAppartment = [[Todo alloc] init];
-    tidyUpAppartment.title = @"Tidy up appartment";
-    tidyUpAppartment.todoDescription = @"I have to tidy up my appartment.";
-    tidyUpAppartment.priorityNumber = @2;
-    tidyUpAppartment.isCompleted = NO;
-    
-    Todo *tidyUpAppartment2 = [[Todo alloc] init];
-    tidyUpAppartment2.title = @"Tidy up appartment2";
-    tidyUpAppartment2.todoDescription = @"I have to tidy up my appartment.";
-    tidyUpAppartment2.priorityNumber = @2;
-    tidyUpAppartment2.isCompleted = NO;
-    
-    self.todoArray = [@[
-                       homework, tidyUpAppartment, tidyUpAppartment2
-                       ] mutableCopy];
     [self setUpRightSwipe];
 }
 
@@ -57,6 +38,54 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) addData {
+    
+    Todo *homework = [[Todo alloc] init];
+    homework.title = @"Homework";
+    homework.todoDescription = @"I have to do all the programming tasks Dan gave us.";
+    homework.priorityNumber = @1;
+    homework.isCompleted = NO;
+    NSDateComponents *deadlineHomework  =[[NSDateComponents alloc] init];
+    [deadlineHomework setDay:26];
+    [deadlineHomework setMonth: 9];
+    [deadlineHomework setYear: 2016];
+    [deadlineHomework setHour:16];
+    [deadlineHomework setMinute:02];
+    NSCalendar *gregorianCalendar = [[ NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    homework.deadline = [gregorianCalendar dateFromComponents:deadlineHomework];
+    
+    Todo *tidyUpAppartment = [[Todo alloc] init];
+    tidyUpAppartment.title = @"Tidy up appartment";
+    tidyUpAppartment.todoDescription = @"I have to tidy up my appartment.";
+    tidyUpAppartment.priorityNumber = @2;
+    tidyUpAppartment.isCompleted = NO;
+    NSDateComponents *deadlineTidying  =[[NSDateComponents alloc] init];
+    [deadlineTidying setDay:30];
+    [deadlineTidying setMonth: 9];
+    [deadlineTidying setYear: 2016];
+    [deadlineTidying setHour:16];
+    [deadlineTidying setMinute:02];
+    tidyUpAppartment.deadline = [gregorianCalendar dateFromComponents:deadlineTidying];
+    
+    Todo *buyGroceries = [[Todo alloc] init];
+    buyGroceries.title = @"Buy groceries";
+    buyGroceries.todoDescription = @"I have to buy bananas, apples, bread, toothpaste, and some water.";
+    buyGroceries.priorityNumber = @3;
+    buyGroceries.isCompleted = NO;
+    NSDateComponents *deadlineGroceries  =[[NSDateComponents alloc] init];
+    [deadlineGroceries setDay:28];
+    [deadlineGroceries setMonth: 9];
+    [deadlineGroceries setYear: 2016];
+    [deadlineGroceries setHour:16];
+    [deadlineGroceries setMinute:02];
+    buyGroceries.deadline = [gregorianCalendar dateFromComponents:deadlineGroceries];
+    
+    
+    self.todoArray = [@[
+                        homework, tidyUpAppartment, buyGroceries
+                        ] mutableCopy];
 }
 
 - (void)insertNewObject:(id)object {

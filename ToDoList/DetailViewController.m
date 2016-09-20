@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *todoTitle;
 @property (weak, nonatomic) IBOutlet UILabel *priorityNumber;
 @property (weak, nonatomic) IBOutlet UILabel *todoDescription;
+@property (weak, nonatomic) IBOutlet UILabel *deadline;
 
 @end
 
@@ -36,6 +37,16 @@
         self.todoDescription.text = [self.detailItem todoDescription];
         self.todoDescription.lineBreakMode = NSLineBreakByWordWrapping;
         self.todoDescription.numberOfLines = 0;
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        [calendar setTimeZone:[NSTimeZone localTimeZone]];
+        NSDateComponents *dateComponents = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute fromDate:[NSDate date]];
+        NSDate *localDateRightNow = [calendar dateFromComponents:dateComponents];
+        
+        NSDate *deadlineDate = [self.detailItem deadline];
+        NSTimeInterval distanceBetweenDates = [deadlineDate timeIntervalSinceDate:localDateRightNow];
+        double minutesInAnHour = 60;
+        NSInteger minutesBetweenDates = distanceBetweenDates / minutesInAnHour;
+        self.deadline.text = [NSString stringWithFormat: @"%ld", (long)minutesBetweenDates];
     }
 }
 

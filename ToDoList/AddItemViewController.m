@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextInput;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextInput;
 @property (weak, nonatomic) IBOutlet UITextField *priorityNumberInput;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePickerInput;
 
 @end
 
@@ -44,13 +45,10 @@
         formatter.numberStyle = NSNumberFormatterDecimalStyle;
         todoItem.priorityNumber = [formatter numberFromString:self.priorityNumberInput.text];
         
+        todoItem.deadline = self.datePickerInput.date;
+        
         
         [masterViewController insertNewObject:todoItem];
-        
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        Todo *todoItem = self.todoArray[indexPath.row];
-//        DetailViewController *detailViewController = (DetailViewController *)[segue destinationViewController];
-//        [detailViewController setDetailItem:todoItem];
     }
 }
 

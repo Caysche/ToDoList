@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "ToDoItem+CoreDataProperties.h"
+#import "CoreDataStack.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *todoTitle;
@@ -33,8 +35,8 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.todoTitle.text = [self.detailItem title];
-        self.priorityNumber.text = [NSString stringWithFormat:@"%@", [self.detailItem priorityNumber]];
-        self.todoDescription.text = [self.detailItem todoDescription];
+        self.priorityNumber.text = [NSString stringWithFormat:@"%hd", [self.detailItem priorityNumber]];
+        self.todoDescription.text = [self.detailItem toDoDescription];
         self.todoDescription.lineBreakMode = NSLineBreakByWordWrapping;
         self.todoDescription.numberOfLines = 0;
         NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];

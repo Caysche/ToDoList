@@ -17,6 +17,10 @@
 		6232058F1D91AE3200C38070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6232058D1D91AE3200C38070 /* LaunchScreen.storyboard */; };
 		623205981D91AE8700C38070 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 623205971D91AE8700C38070 /* Todo.m */; };
 		6232059B1D91B08100C38070 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6232059A1D91B08100C38070 /* CustomTableViewCell.m */; };
+		623D0CB71D9C6AF90053EE04 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 623D0CB61D9C6AF90053EE04 /* CoreDataStack.m */; };
+		623D0CBA1D9C6F610053EE04 /* ToDoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 623D0CB81D9C6F610053EE04 /* ToDoDataModel.xcdatamodeld */; };
+		623D0CBF1D9C72200053EE04 /* ToDoItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 623D0CBC1D9C72200053EE04 /* ToDoItem+CoreDataClass.m */; };
+		623D0CC01D9C72200053EE04 /* ToDoItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 623D0CBE1D9C72200053EE04 /* ToDoItem+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,13 @@
 		623205971D91AE8700C38070 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		623205991D91B08100C38070 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		6232059A1D91B08100C38070 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		623D0CB51D9C6AF90053EE04 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		623D0CB61D9C6AF90053EE04 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		623D0CB91D9C6F610053EE04 /* ToDoDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoDataModel.xcdatamodel; sourceTree = "<group>"; };
+		623D0CBB1D9C72200053EE04 /* ToDoItem+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoItem+CoreDataClass.h"; sourceTree = "<group>"; };
+		623D0CBC1D9C72200053EE04 /* ToDoItem+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoItem+CoreDataClass.m"; sourceTree = "<group>"; };
+		623D0CBD1D9C72200053EE04 /* ToDoItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		623D0CBE1D9C72200053EE04 /* ToDoItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoItem+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +81,10 @@
 		6232057B1D91AE3200C38070 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				623D0CBB1D9C72200053EE04 /* ToDoItem+CoreDataClass.h */,
+				623D0CBC1D9C72200053EE04 /* ToDoItem+CoreDataClass.m */,
+				623D0CBD1D9C72200053EE04 /* ToDoItem+CoreDataProperties.h */,
+				623D0CBE1D9C72200053EE04 /* ToDoItem+CoreDataProperties.m */,
 				6232057F1D91AE3200C38070 /* AppDelegate.h */,
 				623205801D91AE3200C38070 /* AppDelegate.m */,
 				623205821D91AE3200C38070 /* MasterViewController.h */,
@@ -82,10 +97,13 @@
 				6232059A1D91B08100C38070 /* CustomTableViewCell.m */,
 				621D11DC1D91C76A00A29D35 /* AddItemViewController.h */,
 				621D11DD1D91C76A00A29D35 /* AddItemViewController.m */,
+				623D0CB51D9C6AF90053EE04 /* CoreDataStack.h */,
+				623D0CB61D9C6AF90053EE04 /* CoreDataStack.m */,
 				623205881D91AE3200C38070 /* Main.storyboard */,
 				6232058B1D91AE3200C38070 /* Assets.xcassets */,
 				6232058D1D91AE3200C38070 /* LaunchScreen.storyboard */,
 				623205901D91AE3200C38070 /* Info.plist */,
+				623D0CB81D9C6F610053EE04 /* ToDoDataModel.xcdatamodeld */,
 				6232057C1D91AE3200C38070 /* Supporting Files */,
 			);
 			path = ToDoList;
@@ -125,7 +143,7 @@
 		623205711D91AE3200C38070 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Cornelius.Media;
 				TargetAttributes = {
 					623205781D91AE3200C38070 = {
@@ -169,9 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				623D0CC01D9C72200053EE04 /* ToDoItem+CoreDataProperties.m in Sources */,
 				623205981D91AE8700C38070 /* Todo.m in Sources */,
+				623D0CBA1D9C6F610053EE04 /* ToDoDataModel.xcdatamodeld in Sources */,
+				623D0CBF1D9C72200053EE04 /* ToDoItem+CoreDataClass.m in Sources */,
 				623205811D91AE3200C38070 /* AppDelegate.m in Sources */,
 				621D11DE1D91C76A00A29D35 /* AddItemViewController.m in Sources */,
+				623D0CB71D9C6AF90053EE04 /* CoreDataStack.m in Sources */,
 				6232059B1D91B08100C38070 /* CustomTableViewCell.m in Sources */,
 				623205841D91AE3200C38070 /* MasterViewController.m in Sources */,
 				6232057E1D91AE3200C38070 /* main.m in Sources */,
@@ -215,8 +237,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -259,8 +283,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -327,6 +353,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		623D0CB81D9C6F610053EE04 /* ToDoDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				623D0CB91D9C6F610053EE04 /* ToDoDataModel.xcdatamodel */,
+			);
+			currentVersion = 623D0CB91D9C6F610053EE04 /* ToDoDataModel.xcdatamodel */;
+			path = ToDoDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 623205711D91AE3200C38070 /* Project object */;
 }

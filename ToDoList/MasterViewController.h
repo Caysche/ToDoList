@@ -12,7 +12,9 @@
 
 @interface MasterViewController : UITableViewController <UIGestureRecognizerDelegate>
 
-- (void)insertNewObject:(id)object;
+//- (void)insertNewObject:(id)object;
+
+- (void)fetchData;
 
 @end
 
